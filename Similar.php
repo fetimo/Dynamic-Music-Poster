@@ -7,7 +7,7 @@ final class Similar
 	
 	public function __construct()
 	{
-		$this->_similar = simplexml_load_file('http://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist='.ARTIST.'&api_key=fe0699f42bc90c13b46de1035fdb7161&autocorrect=1&limit=4');
+		$this->_similar = simplexml_load_file('http://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist='.ARTIST.'&api_key='.API_KEY.'&autocorrect=1&limit=4');
 	}
 	
 	public function getSimilarArtists()

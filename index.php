@@ -1,5 +1,6 @@
 <?php 	
 define('ARTIST', 'Mr. Scruff');
+define('API_KEY', 'xxxx');
 include_once 'Similar.php';
 include_once 'Venue.php';
 
@@ -19,7 +20,7 @@ $similarArtists = new Similar();
 	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 </head>
 <body onload="initialise()">
-	<img src="bg.jpg" alt="Picture of Mr. Scruff">
+	<img src="bg.jpg" alt="Picture of <?php echo ARTIST ?>">
 	<h1><?php echo ARTIST ?></h1>
 
 	<section class="med-detail left">
@@ -43,7 +44,7 @@ $similarArtists = new Similar();
 		<p>Befriend the <?php echo $venue->getAttendees(); ?> others going and join us.</p>
 	</section>
 	
-	<section class="med-detail left">
+	<section class="med-detail right">
 		<?php if ($venue->getEventInfo() != false) { ?>
 			<div>
 				<h3>Info:</h3>

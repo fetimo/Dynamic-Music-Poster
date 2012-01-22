@@ -6,12 +6,13 @@ class Venue
 	
 	public function __construct()
 	{
-		$this->_latestEvent = simplexml_load_file('http://ws.audioscrobbler.com/2.0/?method=artist.getevents&artist='.ARTIST.'&api_key=fe0699f42bc90c13b46de1035fdb7161&limit=1&autocorrect=1');
+		$this->_latestEvent = simplexml_load_file('http://ws.audioscrobbler.com/2.0/?method=artist.getevents&artist='.ARTIST.'&api_key='.API_KEY.'&limit=1&autocorrect=1');
 	}
 	
 	public function getEventInfo()
 	{
 		$description = $this->_latestEvent->events->event->description;
+		
 		$description = (array)$description;
 		
 		if (empty($description)) {
